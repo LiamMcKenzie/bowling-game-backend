@@ -7,6 +7,8 @@ import cors from 'cors';
 // Import the index routes module
 import indexRoutes from './routes/index.js';
 import institutionRoutes from "./routes/institution.js";
+import userRoutes from "./routes/user.js";
+import leaderboardRoutes from "./routes/leaderboard.js";
 
 // Create an Express application
 const app = express();
@@ -38,6 +40,8 @@ app.use(express.json()); // To parse the incoming requests with JSON payloads. F
 // Use the routes module
 app.use('/', indexRoutes);
 app.use("/api/institutions", institutionRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/leaderboard", leaderboardRoutes);
 
 // Start the server on port 3000
 app.listen(3000, () => {
